@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn The Money</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="logo">LearnTheMoney</div>
+    <nav class="nav">
+      <a href="#hero">Home</a>
+      <a href="#budgeting">Budget</a>
+      <a href="#behavior">Behavior</a>
+      <a href="#simulation">Simulation</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="hero" class="hero">
+      <div class="hero-content">
+        <h1>Simple Financial Literacy</h1>
+        <p>Understand your money and your behavior with clean, easy tools.</p>
+        <div class="hero-buttons">
+          <a href="#budgeting" class="btn primary">Start Budgeting</a>
+          <a href="#behavior" class="btn ghost">Explore Behavior</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="budgeting" class="section">
+      <h2>Budget Snapshot</h2>
+      <p>Quickly see if you are living below or above your means.</p>
+      <div class="card-grid">
+        <div class="card">
+          <h3>Monthly Budget</h3>
+          <form id="budgetForm" class="form">
+            <label>
+              Monthly income
+              <input type="number" id="income" placeholder="e.g. 4000" />
+            </label>
+            <label>
+              Monthly essentials (rent, food, bills)
+              <input type="number" id="essentials" placeholder="e.g. 2500" />
+            </label>
+            <label>
+              Monthly non‑essentials (fun, shopping)
+              <input type="number" id="nonEssentials" placeholder="e.g. 800" />
+            </label>
+            <button type="button" class="btn primary" onclick="calculateBudget()">
+              Calculate
+            </button>
+          </form>
+          <div id="budgetResult" class="result-box"></div>
+        </div>
+
+        <div class="card">
+          <h3>Simple 50 / 30 / 20 View</h3>
+          <p>This shows how your current budget compares to the 50/30/20 rule.</p>
+          <ul id="ruleBreakdown" class="list"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="behavior" class="section section-alt">
+      <h2>Your Money Behavior</h2>
+      <p>Answer a few questions and reflect on your recent spending decisions.</p>
+
+      <div class="card-grid">
+        <div class="card">
+          <h3>Behavior Quiz</h3>
+          <div id="quizContainer" class="quiz-container">
+            <!-- Quiz injected by JS -->
+          </div>
+          <button class="btn primary" onclick="startQuiz()">Start / Reset Quiz</button>
+          <div id="quizResult" class="result-box"></div>
+        </div>
+
+        <div class="card">
+          <h3>Spending Journal</h3>
+          <p>Write one or two sentences after a big purchase. Be honest with yourself.</p>
+          <textarea
+            id="journal"
+            class="journal-input"
+            rows="6"
+            placeholder="Example: I bought new headphones today because..."
+          ></textarea>
+          <div class="journal-actions">
+            <button class="btn primary" onclick="saveJournal()">Save Entry</button>
+            <button class="btn ghost" onclick="clearJournal()">Clear All</button>
+          </div>
+          <div id="journalMessage" class="subtle-text"></div>
+          <h4>Previous entries</h4>
+          <ul id="journalList" class="list"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="simulation" class="section">
+      <h2>Spending Simulation</h2>
+      <p>Make quick choices and see how they affect your savings over 12 months.</p>
+
+      <div class="card">
+        <div id="simulationIntro">
+          <p>You start with 0 in savings and a fixed monthly income. Choose how you behave.</p>
+        </div>
+        <div id="simulationChoices" class="simulation-choices">
+          <!-- Choices injected by JS -->
+        </div>
+        <button class="btn primary" onclick="startSimulation()">Start Simulation</button>
+        <div id="simulationResult" class="result-box"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© 2026 LearnTheMoney</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
